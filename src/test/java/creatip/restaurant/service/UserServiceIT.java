@@ -1,6 +1,7 @@
 package creatip.restaurant.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
 
 import creatip.restaurant.IntegrationTest;
 import creatip.restaurant.domain.User;
