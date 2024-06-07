@@ -1,0 +1,24 @@
+{
+  "restaurantApp": {
+    "menuType": {
+      "home": {
+        "title": "Menu Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Menu Type",
+        "createOrEditLabel": "Create or edit a Menu Type",
+        "notFound": "No Menu Types found"
+      },
+      "created": "A new Menu Type is created with identifier {{ param }}",
+      "updated": "A Menu Type is updated with identifier {{ param }}",
+      "deleted": "A Menu Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Menu Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Menu Type"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

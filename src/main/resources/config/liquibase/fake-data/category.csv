@@ -1,0 +1,11 @@
+id;code;name;status;created_by;last_modified_by
+1;0001;Seafood;15075;system;system
+2;0002;Vegetarian;15075;system;system
+3;0003;Desserts;15075;system;system
+4;0004;Beverages;15075;system;system
+5;0005;Breakfast;15075;system;system
+6;0006;Main Courses;15075;system;system
+7;0007;Soups and Salads;15075;system;system
+8;0008;Appetizers;15075;system;system
+9;0009;Sides;15075;system;system
+10;0010;Specials;15075;system;system

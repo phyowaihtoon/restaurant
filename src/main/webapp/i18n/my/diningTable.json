@@ -1,0 +1,27 @@
+{
+  "restaurantApp": {
+    "diningTable": {
+      "home": {
+        "title": "Dining Tables",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Dining Table အသစ်ထည့်မည်",
+        "createOrEditLabel": "Dining Table အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Dining Tables found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Dining Table အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Dining Table တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Dining Table တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Dining Table {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Dining Table"
+      },
+      "id": "ID",
+      "tableNumber": "Table Number",
+      "seatingCapacity": "Seating Capacity",
+      "tableStatus": "Table Status",
+      "reservations": "Reservations"
+    }
+  }
+}

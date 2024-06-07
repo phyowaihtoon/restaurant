@@ -48,6 +48,14 @@ public class CacheConfiguration {
             createCache(cm, creatip.restaurant.domain.User.class.getName());
             createCache(cm, creatip.restaurant.domain.Authority.class.getName());
             createCache(cm, creatip.restaurant.domain.User.class.getName() + ".authorities");
+            createCache(cm, creatip.restaurant.domain.Category.class.getName());
+            createCache(cm, creatip.restaurant.domain.Product.class.getName());
+            createCache(cm, creatip.restaurant.domain.ProductDetail.class.getName());
+            createCache(cm, creatip.restaurant.domain.DiningTable.class.getName());
+            createCache(cm, creatip.restaurant.domain.Reservation.class.getName());
+            createCache(cm, creatip.restaurant.domain.DiningTable.class.getName() + ".reservations");
+            createCache(cm, creatip.restaurant.domain.Reservation.class.getName() + ".diningTables");
+            createCache(cm, creatip.restaurant.domain.MenuType.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

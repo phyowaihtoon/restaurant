@@ -1,0 +1,19 @@
+{
+  "applications": "*",
+  "changelogDate": "20240604032631",
+  "dto": "mapstruct",
+  "entityTableName": "menu_type",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "name": "MenuType",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,24 @@
+{
+  "restaurantApp": {
+    "menuType": {
+      "home": {
+        "title": "Menu Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Menu Type အသစ်ထည့်မည်",
+        "createOrEditLabel": "Menu Type အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Menu Types found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Menu Type အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Menu Type တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Menu Type တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Menu Type {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Menu Type"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

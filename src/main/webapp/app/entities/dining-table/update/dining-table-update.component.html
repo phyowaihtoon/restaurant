@@ -1,0 +1,126 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-dining-table-heading"
+        data-cy="DiningTableCreateUpdateHeading"
+        jhiTranslate="restaurantApp.diningTable.home.createOrEditLabel"
+      >
+        Create or edit a Dining Table
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.diningTable.tableNumber" for="field_tableNumber">Table Number</label>
+          <input
+            type="number"
+            class="form-control"
+            name="tableNumber"
+            id="field_tableNumber"
+            data-cy="tableNumber"
+            formControlName="tableNumber"
+          />
+          <div *ngIf="editForm.get('tableNumber')!.invalid && (editForm.get('tableNumber')!.dirty || editForm.get('tableNumber')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('tableNumber')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('tableNumber')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+              >This field should be a number.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.diningTable.seatingCapacity" for="field_seatingCapacity"
+            >Seating Capacity</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="seatingCapacity"
+            id="field_seatingCapacity"
+            data-cy="seatingCapacity"
+            formControlName="seatingCapacity"
+          />
+          <div
+            *ngIf="
+              editForm.get('seatingCapacity')!.invalid &&
+              (editForm.get('seatingCapacity')!.dirty || editForm.get('seatingCapacity')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('seatingCapacity')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('seatingCapacity')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+              >This field should be a number.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.diningTable.tableStatus" for="field_tableStatus">Table Status</label>
+          <select
+            type="number"
+            class="form-control"
+            name="tableStatus"
+            id="field_tableStatus"
+            data-cy="tableStatus"
+            formControlName="tableStatus"
+          >
+            <option [ngValue]="tableStatus.value" *ngFor="let tableStatus of tableStatusList">{{ tableStatus.description }}</option>
+          </select>
+
+          <div *ngIf="editForm.get('tableStatus')!.invalid && (editForm.get('tableStatus')!.dirty || editForm.get('tableStatus')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('tableStatus')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('tableStatus')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+              >This field should be a number.</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

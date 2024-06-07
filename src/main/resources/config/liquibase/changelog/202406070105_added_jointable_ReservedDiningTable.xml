@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="202406070105" author="phyo wai htoon">
+		<createTable tableName="reserved_dining_table">
+			<column name="reservation_id" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+
+			<column name="dining_table_id" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		 
+		<addPrimaryKey	columnNames="reservation_id, dining_table_id" tableName="reserved_dining_table" />
+
+		<addForeignKeyConstraint
+			baseTableName="reserved_dining_table"
+			constraintName="fk_reservation_id" baseColumnNames="reservation_id"
+			referencedTableName="reservation" referencedColumnNames="id" />
+		<addForeignKeyConstraint
+			baseTableName="reserved_dining_table"
+			constraintName="fk_dining_table_id" baseColumnNames="dining_table_id"
+			referencedTableName="dining_table" referencedColumnNames="id" />
+			
+	</changeSet>
+</databaseChangeLog>

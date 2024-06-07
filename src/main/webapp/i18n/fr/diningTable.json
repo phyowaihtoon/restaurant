@@ -1,0 +1,27 @@
+{
+  "restaurantApp": {
+    "diningTable": {
+      "home": {
+        "title": "DiningTables",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Dining Table",
+        "createOrEditLabel": "Créer ou éditer un Dining Table",
+        "notFound": "Aucun Dining Table trouvé"
+      },
+      "created": "Un nouveau Dining Table a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Dining Table avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Dining Table avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Dining Table {{ id }} ?"
+      },
+      "detail": {
+        "title": "Dining Table"
+      },
+      "id": "ID",
+      "tableNumber": "Table Number",
+      "seatingCapacity": "Seating Capacity",
+      "tableStatus": "Table Status",
+      "reservations": "Reservations"
+    }
+  }
+}

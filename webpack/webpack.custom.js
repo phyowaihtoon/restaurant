@@ -1,6 +1,6 @@
-const path = require('path');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
+const path = require('path');
 const { hashElement } = require('folder-hash');
 const MergeJsonWebpackPlugin = require('merge-jsons-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
@@ -47,10 +47,10 @@ module.exports = async (config, options, targetOptions) => {
       new BrowserSyncPlugin(
         {
           host: 'localhost',
-          port: 9009,
+          port: 9005,
           https: tls,
           proxy: {
-            target: `http${tls ? 's' : ''}://localhost:${targetOptions.target === 'serve' ? '4500' : '8089'}`,
+            target: `http${tls ? 's' : ''}://localhost:${targetOptions.target === 'serve' ? '4500' : '8085'}`,
             ws: true,
             proxyOptions: {
               changeOrigin: false, //pass the Host header to the backend unchanged  https://github.com/Browsersync/browser-sync/issues/430
@@ -124,6 +124,7 @@ module.exports = async (config, options, targetOptions) => {
       output: {
         groupBy: [
           { pattern: './src/main/webapp/i18n/en/*.json', fileName: './i18n/en.json' },
+          { pattern: './src/main/webapp/i18n/fr/*.json', fileName: './i18n/fr.json' },
           { pattern: './src/main/webapp/i18n/my/*.json', fileName: './i18n/my.json' },
           // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array
         ],

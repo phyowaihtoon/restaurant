@@ -1,0 +1,11 @@
+id;product_code;product_name;image_url;description;status;category_id;menu_type_id;created_by;last_modified_by
+1;P0001;Chocolate Cake;test.png;local food;1;1;1;system;system
+2;P0002;Cheesecake;test.png;local food;1;1;1;system;system
+3;P0003;Ice Cream Sundae;test.png;local food;1;1;1;system;system
+4;P0004;Apple Pie;test.png;local food;1;1;1;system;system
+5;P0005;Pancakes;test.png;local food;1;1;1;system;system
+6;P0006;Omelettes;test.png;local food;1;1;1;system;system
+7;P0007;French Toast;test.png;local food;1;1;1;system;system
+8;P0008;Breakfast Burrito;test.png;local food;1;1;1;system;system
+9;P0009;Mashed Potatoes;test.png;local food;1;1;1;system;system
+10;P0010;Steamed Vegetables;test.png;local food;1;1;1;system;system

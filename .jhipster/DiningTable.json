@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20240604033031",
+  "dto": "mapstruct",
+  "entityTableName": "dining_table",
+  "fields": [
+    {
+      "fieldName": "tableNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "seatingCapacity",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tableStatus",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "DiningTable",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "reservation",
+      "otherEntityRelationshipName": "diningTables",
+      "relationshipName": "reservations",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

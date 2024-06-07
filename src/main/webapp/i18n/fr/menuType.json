@@ -1,0 +1,24 @@
+{
+  "restaurantApp": {
+    "menuType": {
+      "home": {
+        "title": "MenuTypes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Menu Type",
+        "createOrEditLabel": "Créer ou éditer un Menu Type",
+        "notFound": "Aucun Menu Type trouvé"
+      },
+      "created": "Un nouveau Menu Type a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Menu Type avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Menu Type avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Menu Type {{ id }} ?"
+      },
+      "detail": {
+        "title": "Menu Type"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

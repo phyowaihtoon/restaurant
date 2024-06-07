@@ -1,0 +1,27 @@
+{
+  "restaurantApp": {
+    "reservation": {
+      "home": {
+        "title": "Reservations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Reservation အသစ်ထည့်မည်",
+        "createOrEditLabel": "Reservation အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Reservations found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Reservation အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Reservation တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Reservation တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Reservation {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Reservation"
+      },
+      "id": "ID",
+      "name": "Name",
+      "phone": "Phone",
+      "reservedDate": "Reserved Date",
+      "diningTables": "Dining Tables"
+    }
+  }
+}
