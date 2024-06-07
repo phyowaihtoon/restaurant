@@ -150,12 +150,9 @@ public class ReservationResource {
         @RequestParam(required = false, defaultValue = "true") boolean eagerload
     ) {
         log.debug("REST request to get a page of Reservations");
-        Page<ReservationDTO> page;
-        if (eagerload) {
-            page = reservationService.findAllWithEagerRelationships(pageable);
-        } else {
-            page = reservationService.findAll(pageable);
-        }
+
+        Page<ReservationDTO> page = reservationService.findAll(pageable);
+
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

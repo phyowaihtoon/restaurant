@@ -8,6 +8,6 @@ class MenuTypeMapperTest {
 
     @BeforeEach
     public void setUp() {
-        menuTypeMapper = new MenuTypeMapperImpl();
+        //  menuTypeMapper = new MenuTypeMapperImpl();
     }
 }

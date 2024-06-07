@@ -69,15 +69,11 @@ public class ReservationServiceImpl implements ReservationService {
         return reservationRepository.findAll(pageable).map(reservationMapper::toDto);
     }
 
-    public Page<ReservationDTO> findAllWithEagerRelationships(Pageable pageable) {
-        return reservationRepository.findAllWithEagerRelationships(pageable).map(reservationMapper::toDto);
-    }
-
     @Override
     @Transactional(readOnly = true)
     public Optional<ReservationDTO> findOne(Long id) {
         log.debug("Request to get Reservation : {}", id);
-        return reservationRepository.findOneWithEagerRelationships(id).map(reservationMapper::toDto);
+        return reservationRepository.findById(id).map(reservationMapper::toDto);
     }
 
     @Override
