@@ -18,8 +18,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -87,12 +89,15 @@ class CategoryResourceIT {
         category = createEntity(em);
     }
 
+    //@Profile("testcontainers") // VM Arguments >> -Dspring.profiles.active=testcontainers
+
     @Test
     @Transactional
     void createCategory() throws Exception {
         int databaseSizeBeforeCreate = categoryRepository.findAll().size();
         // Create the Category
         CategoryDTO categoryDTO = categoryMapper.toDto(category);
+        System.out.println("Before saving id : " + categoryDTO.getId());
         restCategoryMockMvc
             .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(TestUtil.convertObjectToJsonBytes(categoryDTO)))
             .andExpect(status().isCreated());
@@ -104,6 +109,7 @@ class CategoryResourceIT {
         assertThat(testCategory.getCode()).isEqualTo(DEFAULT_CODE);
         assertThat(testCategory.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testCategory.getStatus()).isEqualTo(DEFAULT_STATUS);
+        System.out.println("After saving id : " + testCategory.getId());
     }
 
     @Test

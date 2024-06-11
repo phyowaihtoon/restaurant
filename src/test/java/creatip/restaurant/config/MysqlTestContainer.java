@@ -26,6 +26,8 @@ public class MysqlTestContainer implements SqlTestContainer {
             mysqlContainer =
                 new MySQLContainer<>("mysql:8.2.0")
                     .withDatabaseName("restaurant")
+                    // .withUsername("root")
+                    // .withPassword("admin@123")
                     .withTmpFs(Collections.singletonMap("/testtmpfs", "rw"))
                     .withLogConsumer(new Slf4jLogConsumer(log))
                     .withReuse(true);

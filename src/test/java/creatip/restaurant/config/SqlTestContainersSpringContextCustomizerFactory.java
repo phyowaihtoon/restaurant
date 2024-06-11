@@ -37,14 +37,24 @@ public class SqlTestContainersSpringContextCustomizerFactory implements ContextC
                         throw new RuntimeException(e);
                     }
                 }
+
                 testValues =
                     testValues.and(
                         "spring.datasource.url=" +
                         prodTestContainer.getTestContainer().getJdbcUrl() +
-                        "?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true"
+                        "?TC_DAEMON=true?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true"
                     );
                 testValues = testValues.and("spring.datasource.username=" + prodTestContainer.getTestContainer().getUsername());
                 testValues = testValues.and("spring.datasource.password=" + prodTestContainer.getTestContainer().getPassword());
+                /*
+                testValues =
+                        testValues.and(
+                            "spring.datasource.url=jdbc:tc:mysql://localhost:3306/restaurant?TC_DAEMON=true" +
+                            "?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true"
+                        );
+                testValues = testValues.and("spring.datasource.username=root");
+                testValues = testValues.and("spring.datasource.password=admin@123");
+                */
             }
             testValues.applyTo(context);
         };
