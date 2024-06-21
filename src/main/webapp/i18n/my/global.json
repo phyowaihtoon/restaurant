@@ -12,7 +12,8 @@
         "product": "Product",
         "diningTable": "Dining Table",
         "reservation": "Reservation",
-        "menuType": "Menu Type"
+        "menuType": "Menu Type",
+        "authorityMenuItem": "Authority Menu Item"
       },
       "account": {
         "main": "အကောင့်",

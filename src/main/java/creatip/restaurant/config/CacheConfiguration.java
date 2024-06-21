@@ -56,6 +56,9 @@ public class CacheConfiguration {
             createCache(cm, creatip.restaurant.domain.DiningTable.class.getName() + ".reservations");
             createCache(cm, creatip.restaurant.domain.Reservation.class.getName() + ".diningTables");
             createCache(cm, creatip.restaurant.domain.MenuType.class.getName());
+            createCache(cm, creatip.restaurant.domain.MenuGroup.class.getName());
+            createCache(cm, creatip.restaurant.domain.MenuItem.class.getName());
+            createCache(cm, creatip.restaurant.domain.AuthorityMenuItem.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

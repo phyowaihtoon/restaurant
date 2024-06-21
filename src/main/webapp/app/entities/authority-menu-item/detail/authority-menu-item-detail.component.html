@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="authorityMenuItem">
+      <h2 data-cy="authorityMenuItemDetailsHeading">
+        <span jhiTranslate="restaurantApp.authorityMenuItem.detail.title">Authority Menu Item</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ authorityMenuItem.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApp.authorityMenuItem.isAllow">Is Allow</span></dt>
+        <dd>
+          <span>{{ authorityMenuItem.isAllow }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApp.authorityMenuItem.isRead">Is Read</span></dt>
+        <dd>
+          <span>{{ authorityMenuItem.isRead }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApp.authorityMenuItem.isWrite">Is Write</span></dt>
+        <dd>
+          <span>{{ authorityMenuItem.isWrite }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApp.authorityMenuItem.isDelete">Is Delete</span></dt>
+        <dd>
+          <span>{{ authorityMenuItem.isDelete }}</span>
+        </dd>
+        <dt><span jhiTranslate="restaurantApp.authorityMenuItem.menuItem">Menu Item</span></dt>
+        <dd>
+          <div *ngIf="authorityMenuItem.menuItem">
+            <a [routerLink]="['/menu-item', authorityMenuItem.menuItem.id, 'view']">{{ authorityMenuItem.menuItem.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="restaurantApp.authorityMenuItem.authority">Authority</span></dt>
+        <dd>
+          <div *ngIf="authorityMenuItem.authority">
+            <a [routerLink]="['/authority', authorityMenuItem.authority.name, 'view']">{{ authorityMenuItem.authority.name }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/authority-menu-item', authorityMenuItem.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

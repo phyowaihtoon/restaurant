@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20240604032831",
+  "dto": "mapstruct",
+  "entityTableName": "jhi_authority",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "name": "Authority",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass",
+  "skipClient": true
+}

@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'jhi-main',
   templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss'],
   providers: [AppPageTitleStrategy],
 })
 export default class MainComponent implements OnInit {
   private renderer: Renderer2;
+  isSideMenuCollapsed = false;
 
   constructor(
     private router: Router,
@@ -33,5 +35,9 @@ export default class MainComponent implements OnInit {
       dayjs.locale(langChangeEvent.lang);
       this.renderer.setAttribute(document.querySelector('html'), 'lang', langChangeEvent.lang);
     });
+  }
+
+  toggleSideMenu() {
+    this.isSideMenuCollapsed = !this.isSideMenuCollapsed;
   }
 }

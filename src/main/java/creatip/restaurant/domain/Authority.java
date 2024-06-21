@@ -7,16 +7,15 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.Objects;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
- * An authority (a security role) used by Spring Security.
+ * A Authority.
  */
 @Entity
 @Table(name = "jhi_authority")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Authority implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -24,16 +23,43 @@ public class Authority implements Serializable {
     @NotNull
     @Size(max = 50)
     @Id
-    @Column(length = 50)
+    @Column(name = "name", length = 50, nullable = false)
     private String name;
 
+    @NotNull
+    @Size(max = 100)
+    @Column(name = "description", length = 100, nullable = false)
+    private String description;
+
+    // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    public Authority name(String name) {
+        this.setName(name);
+        return this;
     }
 
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public Authority description(String description) {
+        this.setDescription(description);
+        return this;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
     public boolean equals(Object o) {
@@ -43,19 +69,21 @@ public class Authority implements Serializable {
         if (!(o instanceof Authority)) {
             return false;
         }
-        return Objects.equals(name, ((Authority) o).name);
+        return getName() != null && getName().equals(((Authority) o).getName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(name);
+        // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+        return getClass().hashCode();
     }
 
     // prettier-ignore
     @Override
     public String toString() {
         return "Authority{" +
-            "name='" + name + '\'' +
+            "name=" + getName() +
+            ", description='" + getDescription() + "'" +
             "}";
     }
 }

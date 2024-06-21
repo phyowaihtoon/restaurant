@@ -1,0 +1,129 @@
+<div>
+  <h2 id="page-heading" data-cy="AuthorityMenuItemHeading">
+    <span jhiTranslate="restaurantApp.authorityMenuItem.home.title">Authority Menu Items</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="restaurantApp.authorityMenuItem.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-authority-menu-item"
+        [routerLink]="['/authority-menu-item/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="restaurantApp.authorityMenuItem.home.createLabel">Create a new Authority Menu Item</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="authorityMenuItems?.length === 0">
+    <span jhiTranslate="restaurantApp.authorityMenuItem.home.notFound">No Authority Menu Items found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="authorityMenuItems && authorityMenuItems.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isAllow">
+            <div class="d-flex">
+              <span jhiTranslate="restaurantApp.authorityMenuItem.isAllow">Is Allow</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isRead">
+            <div class="d-flex">
+              <span jhiTranslate="restaurantApp.authorityMenuItem.isRead">Is Read</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isWrite">
+            <div class="d-flex">
+              <span jhiTranslate="restaurantApp.authorityMenuItem.isWrite">Is Write</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="isDelete">
+            <div class="d-flex">
+              <span jhiTranslate="restaurantApp.authorityMenuItem.isDelete">Is Delete</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="menuItem.id">
+            <div class="d-flex">
+              <span jhiTranslate="restaurantApp.authorityMenuItem.menuItem">Menu Item</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="authority.name">
+            <div class="d-flex">
+              <span jhiTranslate="restaurantApp.authorityMenuItem.authority">Authority</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let authorityMenuItem of authorityMenuItems; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/authority-menu-item', authorityMenuItem.id, 'view']">{{ authorityMenuItem.id }}</a>
+          </td>
+          <td>{{ authorityMenuItem.isAllow }}</td>
+          <td>{{ authorityMenuItem.isRead }}</td>
+          <td>{{ authorityMenuItem.isWrite }}</td>
+          <td>{{ authorityMenuItem.isDelete }}</td>
+          <td>
+            <div *ngIf="authorityMenuItem.menuItem">
+              <a [routerLink]="['/menu-item', authorityMenuItem.menuItem.id, 'view']">{{ authorityMenuItem.menuItem.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="authorityMenuItem.authority">
+              <a [routerLink]="['/authority', authorityMenuItem.authority.name, 'view']">{{ authorityMenuItem.authority.name }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a
+                [routerLink]="['/authority-menu-item', authorityMenuItem.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </a>
+
+              <a
+                [routerLink]="['/authority-menu-item', authorityMenuItem.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </a>
+
+              <button type="submit" (click)="delete(authorityMenuItem)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

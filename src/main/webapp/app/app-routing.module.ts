@@ -9,6 +9,7 @@ import { errorRoute } from './layouts/error/error.route';
 import HomeComponent from './home/home.component';
 import NavbarComponent from './layouts/navbar/navbar.component';
 import LoginComponent from './login/login.component';
+import { SideMenuComponent } from './layouts/sidemenu/side-menu.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,11 @@ import LoginComponent from './login/login.component';
           path: '',
           component: NavbarComponent,
           outlet: 'navbar',
+        },
+        {
+          path: '',
+          component: SideMenuComponent,
+          outlet: 'sidemenu',
         },
         {
           path: 'admin',

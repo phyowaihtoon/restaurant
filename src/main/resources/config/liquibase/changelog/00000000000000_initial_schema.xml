@@ -41,13 +41,13 @@
             <column name="last_modified_by" type="varchar(50)"/>
             <column name="last_modified_date" type="timestamp"/>
         </createTable>
-
+<!--
         <createTable tableName="jhi_authority">
             <column name="name" type="varchar(50)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
         </createTable>
-
+-->
         <createTable tableName="jhi_user_authority">
             <column name="user_id" type="bigint">
                 <constraints nullable="false"/>
@@ -74,6 +74,7 @@
         <addNotNullConstraint   columnName="password_hash"
                                 columnDataType="varchar(60)"
                                 tableName="jhi_user"/>
+        <!-- 
         <loadData
                   file="config/liquibase/data/authority.csv"
                   separator=";"
@@ -81,6 +82,7 @@
                   usePreparedStatements="true">
             <column name="name" type="string"/>
         </loadData>
+         -->
         <loadData
                   file="config/liquibase/data/user.csv"
                   separator=";"

@@ -1,0 +1,29 @@
+{
+  "restaurantApp": {
+    "authorityMenuItem": {
+      "home": {
+        "title": "Authority Menu Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Authority Menu Item အသစ်ထည့်မည်",
+        "createOrEditLabel": "Authority Menu Item အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Authority Menu Items found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Authority Menu Item အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Authority Menu Item တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Authority Menu Item တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Authority Menu Item {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Authority Menu Item"
+      },
+      "id": "ID",
+      "isAllow": "Is Allow",
+      "isRead": "Is Read",
+      "isWrite": "Is Write",
+      "isDelete": "Is Delete",
+      "menuItem": "Menu Item",
+      "authority": "Authority"
+    }
+  }
+}

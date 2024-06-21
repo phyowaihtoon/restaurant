@@ -1,0 +1,151 @@
+<nav class="side-menu">
+  <ul>
+    <li>
+      <a href="javascript:void(0);" (click)="toggleSubMenu('group1')" data-bs-toggle="collapse" aria-expanded="true">Menu Group 1</a>
+      <div class="collapse" [ngbCollapse]="isMenuCollapsed('group1')">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/category"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.category">Category</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/product"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.product">Product</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/dining-table"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.diningTable">Dining Table</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/reservation"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.reservation">Reservation</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <a href="javascript:void(0);" (click)="toggleSubMenu('group2')" data-bs-toggle="collapse" aria-expanded="true">Menu Group 2</a>
+      <div class="collapse" [ngbCollapse]="isMenuCollapsed('group2')">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/category"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.category">Category</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/product"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.product">Product</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/dining-table"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.diningTable">Dining Table</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/reservation"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.reservation">Reservation</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <a href="javascript:void(0);" (click)="toggleSubMenu('group3')" data-bs-toggle="collapse" aria-expanded="true">Menu Group 3</a>
+      <div class="collapse" [ngbCollapse]="isMenuCollapsed('group3')">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/category"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.category">Category</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/product"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.product">Product</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/dining-table"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.diningTable">Dining Table</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="/reservation"
+              class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+            >
+              <span jhiTranslate="global.menu.entities.reservation">Reservation</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>

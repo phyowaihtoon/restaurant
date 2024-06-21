@@ -2,10 +2,17 @@
   <router-outlet name="navbar"></router-outlet>
 </div>
 
-<div class="container-fluid">
-  <div class="card jh-card">
-    <router-outlet></router-outlet>
+<div class="main-layout" [class.collapsed]="isSideMenuCollapsed">
+  <button class="toggle-button" (click)="toggleSideMenu()">☰</button>
+  <div class="sidemenu-container" *ngIf="!isSideMenuCollapsed">
+    <router-outlet name="sidemenu"></router-outlet>
   </div>
 
-  <jhi-footer></jhi-footer>
+  <div class="content-container container-fluid">
+    <div class="card jh-card">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- <jhi-footer></jhi-footer> -->
+  </div>
 </div>

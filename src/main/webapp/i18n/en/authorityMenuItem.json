@@ -1,0 +1,29 @@
+{
+  "restaurantApp": {
+    "authorityMenuItem": {
+      "home": {
+        "title": "Authority Menu Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Authority Menu Item",
+        "createOrEditLabel": "Create or edit a Authority Menu Item",
+        "notFound": "No Authority Menu Items found"
+      },
+      "created": "A new Authority Menu Item is created with identifier {{ param }}",
+      "updated": "A Authority Menu Item is updated with identifier {{ param }}",
+      "deleted": "A Authority Menu Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Authority Menu Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Authority Menu Item"
+      },
+      "id": "ID",
+      "isAllow": "Is Allow",
+      "isRead": "Is Read",
+      "isWrite": "Is Write",
+      "isDelete": "Is Delete",
+      "menuItem": "Menu Item",
+      "authority": "Authority"
+    }
+  }
+}

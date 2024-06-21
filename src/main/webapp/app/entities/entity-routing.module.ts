@@ -29,6 +29,11 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'restaurantApp.menuType.home.title' },
         loadChildren: () => import('./menu-type/menu-type.routes'),
       },
+      {
+        path: 'authority-menu-item',
+        data: { pageTitle: 'restaurantApp.authorityMenuItem.home.title' },
+        loadChildren: () => import('./authority-menu-item/authority-menu-item.routes'),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

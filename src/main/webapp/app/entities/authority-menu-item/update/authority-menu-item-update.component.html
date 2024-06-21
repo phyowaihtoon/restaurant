@@ -1,0 +1,155 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-authority-menu-item-heading"
+        data-cy="AuthorityMenuItemCreateUpdateHeading"
+        jhiTranslate="restaurantApp.authorityMenuItem.home.createOrEditLabel"
+      >
+        Create or edit a Authority Menu Item
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.authorityMenuItem.isAllow" for="field_isAllow">Is Allow</label>
+          <input type="number" class="form-control" name="isAllow" id="field_isAllow" data-cy="isAllow" formControlName="isAllow" />
+          <div *ngIf="editForm.get('isAllow')!.invalid && (editForm.get('isAllow')!.dirty || editForm.get('isAllow')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isAllow')?.errors?.min"
+              jhiTranslate="entity.validation.min"
+              [translateValues]="{ min: 0 }"
+              >This field should be at least 0.</small
+            >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isAllow')?.errors?.max"
+              jhiTranslate="entity.validation.max"
+              [translateValues]="{ max: 1 }"
+              >This field cannot be more than 1.</small
+            >
+            <small class="form-text text-danger" [hidden]="!editForm.get('isAllow')?.errors?.number" jhiTranslate="entity.validation.number"
+              >This field should be a number.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.authorityMenuItem.isRead" for="field_isRead">Is Read</label>
+          <input type="number" class="form-control" name="isRead" id="field_isRead" data-cy="isRead" formControlName="isRead" />
+          <div *ngIf="editForm.get('isRead')!.invalid && (editForm.get('isRead')!.dirty || editForm.get('isRead')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isRead')?.errors?.min"
+              jhiTranslate="entity.validation.min"
+              [translateValues]="{ min: 0 }"
+              >This field should be at least 0.</small
+            >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isRead')?.errors?.max"
+              jhiTranslate="entity.validation.max"
+              [translateValues]="{ max: 1 }"
+              >This field cannot be more than 1.</small
+            >
+            <small class="form-text text-danger" [hidden]="!editForm.get('isRead')?.errors?.number" jhiTranslate="entity.validation.number"
+              >This field should be a number.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.authorityMenuItem.isWrite" for="field_isWrite">Is Write</label>
+          <input type="number" class="form-control" name="isWrite" id="field_isWrite" data-cy="isWrite" formControlName="isWrite" />
+          <div *ngIf="editForm.get('isWrite')!.invalid && (editForm.get('isWrite')!.dirty || editForm.get('isWrite')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isWrite')?.errors?.min"
+              jhiTranslate="entity.validation.min"
+              [translateValues]="{ min: 0 }"
+              >This field should be at least 0.</small
+            >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isWrite')?.errors?.max"
+              jhiTranslate="entity.validation.max"
+              [translateValues]="{ max: 1 }"
+              >This field cannot be more than 1.</small
+            >
+            <small class="form-text text-danger" [hidden]="!editForm.get('isWrite')?.errors?.number" jhiTranslate="entity.validation.number"
+              >This field should be a number.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.authorityMenuItem.isDelete" for="field_isDelete">Is Delete</label>
+          <input type="number" class="form-control" name="isDelete" id="field_isDelete" data-cy="isDelete" formControlName="isDelete" />
+          <div *ngIf="editForm.get('isDelete')!.invalid && (editForm.get('isDelete')!.dirty || editForm.get('isDelete')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isDelete')?.errors?.min"
+              jhiTranslate="entity.validation.min"
+              [translateValues]="{ min: 0 }"
+              >This field should be at least 0.</small
+            >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isDelete')?.errors?.max"
+              jhiTranslate="entity.validation.max"
+              [translateValues]="{ max: 1 }"
+              >This field cannot be more than 1.</small
+            >
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('isDelete')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+              >This field should be a number.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.authorityMenuItem.menuItem" for="field_menuItem">Menu Item</label>
+          <select class="form-control" id="field_menuItem" data-cy="menuItem" name="menuItem" formControlName="menuItem">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="menuItemOption" *ngFor="let menuItemOption of menuItemsSharedCollection">{{ menuItemOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restaurantApp.authorityMenuItem.authority" for="field_authority">Authority</label>
+          <select class="form-control" id="field_authority" data-cy="authority" name="authority" formControlName="authority">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="authorityOption" *ngFor="let authorityOption of authoritiesSharedCollection">
+              {{ authorityOption.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
